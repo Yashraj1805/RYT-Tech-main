@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* RYT TechCorp Premium Dark Theme - Corporate Cybersecurity UI */
+    
+    /* Base Colors - 70% Deep Navy/Graphite */
+    --background: 220 25% 8%;
+    --foreground: 210 30% 96%;
+    
+    /* Card surfaces with subtle elevation */
+    --card: 220 22% 10%;
+    --card-foreground: 210 30% 96%;
+    
+    --popover: 220 22% 10%;
+    --popover-foreground: 210 30% 96%;
+    
+    /* Primary - Royal Blue (subtle enterprise tone) */
+    --primary: 220 80% 58%;
+    --primary-foreground: 210 30% 98%;
+    
+    /* Secondary - Darker surface for contrast */
+    --secondary: 220 20% 14%;
+    --secondary-foreground: 210 30% 96%;
+    
+    /* Muted - Subdued backgrounds */
+    --muted: 220 18% 16%;
+    --muted-foreground: 215 15% 65%;
+    
+    /* Accent - Electric Purple for CTAs and highlights */
+    --accent: 270 75% 62%;
+    --accent-foreground: 210 30% 98%;
+    
+    /* Neon Cyan - Strategic accent (8-10% usage) */
+    --neon: 180 85% 58%;
+    --neon-foreground: 220 25% 8%;
+    
+    /* Destructive states */
+    --destructive: 0 70% 58%;
+    --destructive-foreground: 210 30% 98%;
+    
+    /* Borders - Subtle with neon hint */
+    --border: 220 20% 20%;
+    --border-neon: 180 85% 58%;
+    --input: 220 20% 18%;
+    --ring: 220 80% 58%;
+    
+    /* Premium Gradient - Royal Blue → Electric Purple → Neon Cyan */
+    --gradient-start: 220 80% 58%;
+    --gradient-mid: 270 75% 62%;
+    --gradient-end: 180 85% 58%;
+    
+    /* Glassmorphism - 20-30% usage */
+    --glass-bg: 220 22% 10% / 0.4;
+    --glass-border: 220 30% 30% / 0.3;
+    
+    /* Shadows for depth (4-8dp) */
+    --shadow-soft: 0 4px 12px rgb(0 0 0 / 0.15);
+    --shadow-medium: 0 8px 24px rgb(0 0 0 / 0.25);
+    --shadow-glow: 0 0 20px rgb(59 130 246 / 0.15);
+    
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  /* Premium gradient utility */
+  .gradient-premium {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gradient-start)) 0%,
+      hsl(var(--gradient-mid)) 50%,
+      hsl(var(--gradient-end)) 100%
+    );
+  }
+  
+  /* Glassmorphism utility */
+  .glass-card {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-soft);
+  }
+  
+  /* Neon glow effect */
+  .neon-glow {
+    box-shadow: 0 0 20px hsl(var(--neon) / 0.3), 
+                0 0 40px hsl(var(--neon) / 0.15);
+  }
+  
+  /* Soft glow for buttons */
+  .soft-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Holographic shimmer effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+  
+  .holographic {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--neon) / 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 8s ease-in-out infinite;
+  }
+  
+  /* Smooth fade-up animation */
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out;
+  }
+  
+  /* Gentle float animation for 3D elements */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(2deg);
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Gradient animation for borders */
+  @keyframes gradient-x {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 3s ease infinite;
+  }
+  
+  /* Parallax scroll effect helper */
+  .parallax {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
