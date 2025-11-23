@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useNavigate, useLocation, Navigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,12 +20,16 @@ const Navigation = () => {
       if (location.pathname !== '/') {
         navigate('/');
         setTimeout(() => {
-          const element = document.querySelector(href.replace('/', ''));
-          element?.scrollIntoView({ behavior: 'smooth' });
+          if (typeof document !== 'undefined') {
+            const element = document.querySelector(href.replace('/', ''));
+            element?.scrollIntoView({ behavior: 'smooth' });
+          }
         }, 100);
       } else {
-        const element = document.querySelector(href.replace('/', ''));
-        element?.scrollIntoView({ behavior: 'smooth' });
+        if (typeof document !== 'undefined') {
+          const element = document.querySelector(href.replace('/', ''));
+          element?.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     } else {
       navigate(href);

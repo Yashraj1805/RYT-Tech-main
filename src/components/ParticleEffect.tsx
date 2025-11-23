@@ -10,8 +10,10 @@ const ParticleEffect = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    if (typeof window !== 'undefined') {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
 
     const particles: Array<{
       x: number;
@@ -34,8 +36,10 @@ const ParticleEffect = () => {
       });
     }
 
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Check for reduced motion preference (only in browser)
+    const prefersReducedMotion = typeof window !== 'undefined' 
+      ? window.matchMedia('(prefers-reduced-motion: reduce)').matches 
+      : false;
 
     const animate = () => {
       if (prefersReducedMotion) return; // Skip animation if user prefers reduced motion
@@ -78,8 +82,11 @@ const ParticleEffect = () => {
       canvas.height = window.innerHeight;
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+    return () => {};
   }, []);
 
   return (

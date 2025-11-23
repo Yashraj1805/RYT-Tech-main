@@ -8,6 +8,8 @@ const AmbientLight = () => {
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     setWindowSize({ width: window.innerWidth, height: window.innerHeight });
 
     const handleResize = () => {

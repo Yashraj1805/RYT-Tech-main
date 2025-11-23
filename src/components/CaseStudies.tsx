@@ -41,11 +41,12 @@ const CaseStudies = () => {
   ];
 
   const scrollToHero = () => {
+    if (typeof window === 'undefined') return;
     const el = document.getElementById('hero');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     } else {
-      window.location.href = '/';
+      navigate('/');
     }
   };
 

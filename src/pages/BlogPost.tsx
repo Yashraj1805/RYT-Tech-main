@@ -171,7 +171,7 @@ Cyber resilience is now a leadership discipline. Organizations that operationali
   };
 
   const post = posts[slug || ''] || posts['mastering-modern-full-stack-engineering'];
-  const shareUrl = window.location.href;
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : `https://ryttechcorp.online/blog/${slug || ''}`;
 
   const renderContent = (content: string) => {
     const parts = content.split(/```(\w+)?\n([\s\S]*?)```/);
@@ -239,7 +239,7 @@ Cyber resilience is now a leadership discipline. Organizations that operationali
     );
   }
 
-  const postDescription = post.excerpt || post.content.substring(0, 150) + '...';
+  const postDescription = post.excerpt || (post.content ? post.content.substring(0, 150) + '...' : '');
   const optimizedDescription = postDescription.length > 155 ? postDescription.substring(0, 152) + '...' : postDescription;
 
   return (

@@ -70,8 +70,10 @@ const Hero = () => {
                 variant="outline"
                 className="text-base font-semibold px-8 py-6 border-border-neon/40 hover:border-border-neon hover:bg-secondary/50 transition-all duration-200"
                 onClick={() => {
-                  const serviceSection = document.querySelector("#services");
-                  serviceSection?.scrollIntoView({ behavior: "smooth" });
+                  if (typeof document !== 'undefined') {
+                    const serviceSection = document.querySelector("#services");
+                    serviceSection?.scrollIntoView({ behavior: "smooth" });
+                  }
                 }}
                 aria-label="Scroll to solutions section"
               >

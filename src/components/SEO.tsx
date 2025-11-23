@@ -24,6 +24,9 @@ const SEO = ({
   serviceName,
 }: SEOProps) => {
   useEffect(() => {
+    // Only run in browser environment
+    if (typeof document === 'undefined') return;
+    
     // Ensure description is under 155 characters
     const optimizedDescription = description.length > 155 ? description.substring(0, 152) + '...' : description;
 

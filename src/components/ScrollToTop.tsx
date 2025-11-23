@@ -9,12 +9,14 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Scroll to top immediately when route changes
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant" as ScrollBehavior,
-    });
+    // Scroll to top immediately when route changes (only in browser)
+    if (typeof window !== 'undefined') {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant" as ScrollBehavior,
+      });
+    }
   }, [pathname]);
 
   return null;
