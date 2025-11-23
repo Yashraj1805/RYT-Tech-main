@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageBackground from "@/components/PageBackground";
+import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { toast } from "@/hooks/use-toast";
@@ -67,6 +68,16 @@ const Contact = () => {
   };
   return (
     <PageBackground>
+      <SEO
+        title="Contact Us | RYT TechCorp"
+        description="Get in touch for enterprise AI solutions, cybersecurity services, cloud infrastructure, and full-stack development."
+        keywords="contact RYT TechCorp, enterprise software consulting, AI solutions contact, cybersecurity services"
+        canonical="https://ryttechcorp.online/contact"
+        breadcrumbs={[
+          { name: 'Home', url: 'https://ryttechcorp.online' },
+          { name: 'Contact', url: 'https://ryttechcorp.online/contact' },
+        ]}
+      />
       <Navigation />
       <main className="pt-24 pb-16">
         <section className="py-24 lg:py-32 relative">
@@ -108,7 +119,8 @@ const Contact = () => {
                       <div>
                         <h3 className="font-semibold text-foreground mb-1">Email</h3>
                         <a href="mailto:contact@ryttechcorp.com" className="text-muted-foreground hover:text-neon transition-colors">
-                          contact@ryttechcorp.com
+                          contact@ryttechcorp.online
+                          
                         </a>
                       </div>
                     </div>

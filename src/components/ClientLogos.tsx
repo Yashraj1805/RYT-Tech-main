@@ -88,11 +88,15 @@ const ClientLogos = () => {
                   {/* Logo */}
                   <img
                     src={client.logo}
-                    alt={client.name}
+                    alt={`${client.name} technology logo`}
+                    width={200}
+                    height={80}
+                    loading="lazy"
                     className="max-h-10 mb-2 object-contain transition-transform duration-300 group-hover:scale-110"
                     style={{
                       filter: client.name === "Express JS" ? "invert(1) brightness(2)" : "none"
                     }}
+                    decoding="async"
                   />
 
                   {/* Name (Single Line, Fix Express) */}

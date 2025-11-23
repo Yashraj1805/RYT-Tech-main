@@ -12,14 +12,34 @@ import TechStackGrid from '@/components/case-study/TechStackGrid';
 import CTASection from '@/components/case-study/CTASection';
 import { caseStudyContent } from '@/case-studies/content';
 import PageBackground from '@/components/PageBackground';
+import SEO from '@/components/SEO';
 
 const CaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const content = slug ? caseStudyContent[slug] : undefined;
 
+  const caseStudyDescription = content 
+    ? `${content.heroTitle} - ${content.heroSubtitle}. Learn how RYT TechCorp delivered results.`
+    : 'Case study not found';
+  const optimizedDescription = caseStudyDescription.length > 155 
+    ? caseStudyDescription.substring(0, 152) + '...' 
+    : caseStudyDescription;
+
   return (
     <PageBackground>
+      <SEO
+        title={content ? `${content.heroTitle} | RYT TechCorp Case Study` : 'Case Study Not Found | RYT TechCorp'}
+        description={optimizedDescription}
+        keywords={content ? `${content.heroTitle}, case study, enterprise solutions, RYT TechCorp` : 'case study'}
+        canonical={`https://ryttechcorp.online/case-studies/${slug || ''}`}
+        breadcrumbs={content ? [
+          { name: 'Home', url: 'https://ryttechcorp.online' },
+          { name: 'Case Studies', url: 'https://ryttechcorp.online/#case-studies' },
+          { name: content.heroTitle, url: `https://ryttechcorp.online/case-studies/${slug}` },
+        ] : undefined}
+        noindex={!content}
+      />
       <Navigation />
       <main className="container mx-auto px-4 lg:px-8 py-24">
         <div className="mb-12 flex flex-col gap-4">

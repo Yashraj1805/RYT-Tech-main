@@ -7,6 +7,7 @@ import { Card } from '@/components/ui/card';
 import { useScrollTrigger } from '@/hooks/use-scroll-trigger';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
 import AnimatedBorder from '@/components/AnimatedBorder';
 import { useNavigate } from 'react-router-dom';
 
@@ -122,6 +123,16 @@ const Resources = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Resources | RYT TechCorp"
+        description="Technical resources, documentation, guides, and best practices for enterprise AI, cybersecurity, and cloud services."
+        keywords="technical resources, documentation, guides, best practices, enterprise software, RYT TechCorp"
+        canonical="https://ryttechcorp.online/resources"
+        breadcrumbs={[
+          { name: 'Home', url: 'https://ryttechcorp.online' },
+          { name: 'Resources', url: 'https://ryttechcorp.online/resources' },
+        ]}
+      />
       <Navigation />
       
       {/* Hero Section */}

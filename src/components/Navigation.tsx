@@ -42,7 +42,16 @@ const Navigation = () => {
             className="flex items-center cursor-pointer"
             onClick={() => navigate('/')}
           >
-            <img src="/assets/logo/logo.png" alt="RYT TechCorp Logo" className="h-14 md:h-16 w-auto" />
+            <img 
+              src="/assets/logo/logo.png" 
+              alt="RYT TechCorp Logo - Enterprise AI, Cybersecurity & Software Solutions" 
+              width={200}
+              height={60}
+              className="h-14 md:h-16 w-auto" 
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+            />
           </div>
 
           {/* Desktop Navigation */}

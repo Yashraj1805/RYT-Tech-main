@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageBackground from '@/components/PageBackground';
+import SEO from '@/components/SEO';
 import { useScrollTrigger } from '@/hooks/use-scroll-trigger';
 import { toast } from '@/hooks/use-toast';
 
@@ -177,6 +178,16 @@ const Support = () => {
 
   return (
     <PageBackground>
+      <SEO
+        title="Support | RYT TechCorp"
+        description="Technical support, knowledge base, FAQs, and contact our team for enterprise AI and cybersecurity solutions."
+        keywords="technical support, help desk, customer support, RYT TechCorp support"
+        canonical="https://ryttechcorp.online/support"
+        breadcrumbs={[
+          { name: 'Home', url: 'https://ryttechcorp.online' },
+          { name: 'Support', url: 'https://ryttechcorp.online/support' },
+        ]}
+      />
       <Navigation />
       <main className="pt-24 pb-16">
         {/* Hero Section */}

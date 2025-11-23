@@ -1,4 +1,5 @@
 import { Award, Users, Gauge, HeartHandshake } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const WhyChooseUs = () => {
   const reasons = [
@@ -42,13 +43,15 @@ const WhyChooseUs = () => {
               <span className="gradient-premium bg-clip-text text-transparent"> Trust</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              With our experience securing critical infrastructure and delivering 
-              cutting-edge AI solutions, RYT TechCorp is your strategic partner in digital transformation.
+              With our experience securing critical infrastructure and delivering cutting-edge AI solutions, 
+              RYT TechCorp is your strategic partner in digital transformation.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              We combine deep technical expertise with a customer-first approach, ensuring every 
-              solution is tailored to your unique business needs. From threat prevention to 
-              intelligent automation, we've got you covered.
+              We combine deep technical expertise with a customer-first approach. 
+              Every solution is tailored to your unique business needs. 
+              From threat prevention to intelligent automation, we've got you covered. 
+              Explore our <Link to="/#services" className="text-neon hover:underline">solutions</Link> or 
+              <Link to="/contact" className="text-neon hover:underline ml-1">contact us</Link> to get started.
             </p>
             
             {/* Key Differentiators */}

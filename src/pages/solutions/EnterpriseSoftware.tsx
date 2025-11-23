@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Layers, Code, Plug, Database, Network, Settings, AlertTriangle } from 'lucide-react';
@@ -7,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageBackground from '@/components/PageBackground';
+import SEO from '@/components/SEO';
 import {
   AnimatedMetrics,
   SolutionTimeline,
@@ -21,14 +21,6 @@ import { FlaskConical, CheckCircle2, Building2 } from 'lucide-react';
 
 const EnterpriseSoftware = () => {
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    document.title = 'Enterprise Software Development | RYT TechCorp';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'High-performance, scalable enterprise software engineered for mission-critical operations. Custom applications, APIs, and system integration from RYT TechCorp.');
-    }
-  }, []);
 
   const metrics: Metric[] = [
     { value: 99.9, suffix: '%', label: 'Uptime', description: 'Mission-critical reliability' },
@@ -184,6 +176,19 @@ const EnterpriseSoftware = () => {
 
   return (
     <PageBackground>
+      <SEO
+        title="Enterprise Software Development | RYT TechCorp"
+        description="High-performance, scalable enterprise software for mission-critical operations. Custom applications, APIs, and system integration."
+        keywords="enterprise software, custom applications, API development, system integration, scalable software, RYT TechCorp"
+        canonical="https://ryttechcorp.online/solutions/enterprise-software"
+        breadcrumbs={[
+          { name: 'Home', url: 'https://ryttechcorp.online' },
+          { name: 'Solutions', url: 'https://ryttechcorp.online/#services' },
+          { name: 'Enterprise Software', url: 'https://ryttechcorp.online/solutions/enterprise-software' },
+        ]}
+        serviceType="Software Development"
+        serviceName="Enterprise Software Development"
+      />
       <Navigation />
       <main className="pt-24 pb-16">
         <section className="relative py-20 overflow-hidden">
@@ -203,13 +208,12 @@ const EnterpriseSoftware = () => {
                 <Layers className="w-5 h-5 text-neon" />
                 <span className="text-sm font-semibold text-neon">Enterprise</span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Enterprise Software
-                <span className="gradient-premium bg-clip-text text-transparent"> Development</span>
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                Enterprise Software Development
               </h1>
-              <p className="text-muted-foreground text-xl mb-8">
+              <h2 className="text-muted-foreground text-xl mb-8 font-normal">
                 High-performance, scalable software engineered for mission-critical operations.
-              </p>
+              </h2>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"

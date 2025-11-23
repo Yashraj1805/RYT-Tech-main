@@ -1,21 +1,22 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 
 const NotFound = () => {
   const location = useLocation();
 
+  // Track 404 errors silently (no console output for production)
   useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+    // Analytics tracking can be added here if needed
   }, [location.pathname]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted">
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <a href="/" className="text-primary underline hover:text-primary/90">
+        <h2 className="mb-4 text-xl text-muted-foreground">Oops! Page not found</h2>
+        <Link to="/" className="text-primary underline hover:text-primary/90" aria-label="Return to homepage">
           Return to Home
-        </a>
+        </Link>
       </div>
     </div>
   );

@@ -131,8 +131,12 @@ const Blog = () => {
               <div className="relative h-48 overflow-hidden">
                 <img
                   src={post.image}
-                  alt={post.title}
+                  alt={`${post.title} - ${post.category} article by ${post.author}`}
+                  loading="lazy"
+                  width={800}
+                  height={500}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  decoding="async"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 bg-neon/20 backdrop-blur-sm text-neon text-xs font-semibold rounded-full border border-neon/30">

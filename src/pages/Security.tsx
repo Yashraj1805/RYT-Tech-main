@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageBackground from '@/components/PageBackground';
+import SEO from '@/components/SEO';
 import { useScrollTrigger } from '@/hooks/use-scroll-trigger';
 
 const Security = () => {
@@ -73,6 +74,16 @@ const Security = () => {
 
   return (
     <PageBackground>
+      <SEO
+        title="Security | RYT TechCorp"
+        description="RYT TechCorp security practices, data protection, encryption, compliance, and enterprise-grade security measures."
+        keywords="security practices, data protection, encryption, compliance, security measures, RYT TechCorp"
+        canonical="https://ryttechcorp.online/security"
+        breadcrumbs={[
+          { name: 'Home', url: 'https://ryttechcorp.online' },
+          { name: 'Security', url: 'https://ryttechcorp.online/security' },
+        ]}
+      />
       <Navigation />
       <main className="pt-24 pb-16">
         {/* Hero Section */}

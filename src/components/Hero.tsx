@@ -42,18 +42,14 @@ const Hero = () => {
 
           {/* Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-            Secure Your Digital
-            <br />
-            <span className="gradient-premium bg-clip-text text-transparent">
-              Future with AI
-            </span>
+            Secure Your Digital Future with AI
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            RYT TechCorp delivers enterprise-grade software, AI solutions, and cybersecurity
-            services that protect what matters most—your data, your users, your business.
-          </p>
+          <h2 className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-normal">
+            Enterprise-grade software, AI solutions, and cybersecurity services. 
+            Protect what matters most—your data, your users, your business.
+          </h2>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -77,6 +73,7 @@ const Hero = () => {
                   const serviceSection = document.querySelector("#services");
                   serviceSection?.scrollIntoView({ behavior: "smooth" });
                 }}
+                aria-label="Scroll to solutions section"
               >
                 View Solutions
               </Button>

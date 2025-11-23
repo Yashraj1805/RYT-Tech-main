@@ -34,7 +34,12 @@ const ParticleEffect = () => {
       });
     }
 
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const animate = () => {
+      if (prefersReducedMotion) return; // Skip animation if user prefers reduced motion
+      
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle) => {
@@ -64,7 +69,9 @@ const ParticleEffect = () => {
       requestAnimationFrame(animate);
     };
 
-    animate();
+    if (!prefersReducedMotion) {
+      animate();
+    }
 
     const handleResize = () => {
       canvas.width = window.innerWidth;
@@ -79,6 +86,7 @@ const ParticleEffect = () => {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 pointer-events-none opacity-40"
+      aria-hidden="true"
     />
   );
 };

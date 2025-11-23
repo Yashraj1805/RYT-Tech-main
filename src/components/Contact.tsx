@@ -75,8 +75,8 @@ const Contact = () => {
                 <span className="gradient-premium bg-clip-text text-transparent"> Digital Future</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Talk to our security experts about protecting your infrastructure, 
-                implementing AI solutions, or building enterprise software.
+                Talk to our security experts about protecting your infrastructure, implementing AI solutions, 
+                or building enterprise software. Explore our <a href="/#services" className="text-neon hover:underline">solutions</a> first.
               </p>
             </div>
 
@@ -89,7 +89,7 @@ const Contact = () => {
                 <div>
                   <div className="font-semibold mb-1">Email Us</div>
                   <a href="mailto:contact@ryttechcorp.com" className="text-muted-foreground hover:text-primary transition-colors">
-                    contact@ryttechcorp.com
+                    contact@ryttechcorp.online
                   </a>
                 </div>
               </div>

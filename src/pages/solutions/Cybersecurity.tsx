@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Shield, Eye, Lock, FileCheck, Zap, AlertTriangle, CheckCircle2, FlaskConical, Building2 } from 'lucide-react';
@@ -7,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageBackground from '@/components/PageBackground';
+import SEO from '@/components/SEO';
 import {
   AnimatedMetrics,
   SolutionTimeline,
@@ -20,14 +20,6 @@ import {
 
 const Cybersecurity = () => {
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    document.title = 'Cybersecurity Solutions | RYT TechCorp';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Enterprise cybersecurity solutions with AI-driven threat detection, zero trust architecture, and 24/7 SOC monitoring. Protect your infrastructure with RYT TechCorp.');
-    }
-  }, []);
 
   const metrics: Metric[] = [
     { value: 99.9, suffix: '%', label: 'Uptime SLA', description: 'Guaranteed availability' },
@@ -183,6 +175,19 @@ const Cybersecurity = () => {
 
   return (
     <PageBackground>
+      <SEO
+        title="Cybersecurity Solutions | RYT TechCorp"
+        description="AI-driven threat detection, zero trust architecture, and 24/7 SOC monitoring. Enterprise cybersecurity solutions."
+        keywords="cybersecurity, penetration testing, threat detection, SOC monitoring, zero trust, security audit, RYT TechCorp"
+        canonical="https://ryttechcorp.online/solutions/cybersecurity"
+        breadcrumbs={[
+          { name: 'Home', url: 'https://ryttechcorp.online' },
+          { name: 'Solutions', url: 'https://ryttechcorp.online/#services' },
+          { name: 'Cybersecurity', url: 'https://ryttechcorp.online/solutions/cybersecurity' },
+        ]}
+        serviceType="Cybersecurity Services"
+        serviceName="Enterprise Cybersecurity Solutions"
+      />
       <Navigation />
       <main className="pt-24 pb-16">
         {/* Hero Section */}
@@ -204,13 +209,12 @@ const Cybersecurity = () => {
                 <Shield className="w-5 h-5 text-neon" />
                 <span className="text-sm font-semibold text-neon">Security</span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Cybersecurity
-                <span className="gradient-premium bg-clip-text text-transparent"> Solutions</span>
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                Cybersecurity Solutions
               </h1>
-              <p className="text-muted-foreground text-xl mb-8">
+              <h2 className="text-muted-foreground text-xl mb-8 font-normal">
                 Protecting enterprises with intelligent, real-time threat defense and 24/7 SOC monitoring.
-              </p>
+              </h2>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"

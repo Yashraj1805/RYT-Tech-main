@@ -55,7 +55,15 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1 space-y-4">
             <div className="flex items-center">
-              <img src="/assets/logo/logo.png" alt="RYT TechCorp Logo" className="h-14 md:h-16 w-auto" />
+              <img 
+                src="/assets/logo/logo.png" 
+                alt="RYT TechCorp Logo - Enterprise AI, Cybersecurity & Software Solutions" 
+                width={200}
+                height={60}
+                className="h-14 md:h-16 w-auto" 
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Enterprise security, AI, and software solutions for the modern digital age.
@@ -63,32 +71,34 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex items-center space-x-3 pt-2">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/ryt-techcorp/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-secondary hover:bg-primary transition-colors flex items-center justify-center"
-                aria-label="LinkedIn"
+                aria-label="Visit RYT TechCorp on LinkedIn"
               >
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="w-4 h-4" aria-hidden="true" />
               </a>
               <a
                 href="#"
                 className="w-9 h-9 rounded-lg bg-secondary hover:bg-primary transition-colors flex items-center justify-center"
-                aria-label="Twitter"
+                aria-label="Visit RYT TechCorp on Twitter"
               >
-                <Twitter className="w-4 h-4" />
+                <Twitter className="w-4 h-4" aria-hidden="true" />
               </a>
               <a
                 href="#"
                 className="w-9 h-9 rounded-lg bg-secondary hover:bg-primary transition-colors flex items-center justify-center"
-                aria-label="GitHub"
+                aria-label="Visit RYT TechCorp on GitHub"
               >
-                <Github className="w-4 h-4" />
+                <Github className="w-4 h-4" aria-hidden="true" />
               </a>
               <a
-                href="#"
+                href="mailto:contact@ryttechcorp.com"
                 className="w-9 h-9 rounded-lg bg-secondary hover:bg-primary transition-colors flex items-center justify-center"
-                aria-label="Email"
+                aria-label="Email RYT TechCorp"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
           </div>

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Zap, GitBranch, Container, Eye, Rocket, Shield, AlertTriangle } from 'lucide-react';
@@ -7,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageBackground from '@/components/PageBackground';
+import SEO from '@/components/SEO';
 import {
   AnimatedMetrics,
   SolutionTimeline,
@@ -21,14 +21,6 @@ import { FlaskConical, CheckCircle2, Building2 } from 'lucide-react';
 
 const DevOps = () => {
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    document.title = 'DevOps Engineering | RYT TechCorp';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Self-healing pipelines, zero-downtime deployments, and enterprise DevOps automation. CI/CD, Kubernetes, and SRE practices from RYT TechCorp.');
-    }
-  }, []);
 
   const metrics: Metric[] = [
     { value: 99.9, suffix: '%', label: 'Deployment Success', description: 'Zero-downtime releases' },
@@ -177,6 +169,19 @@ const DevOps = () => {
 
   return (
     <PageBackground>
+      <SEO
+        title="DevOps Engineering | RYT TechCorp"
+        description="Self-healing pipelines, zero-downtime deployments, and enterprise DevOps automation. CI/CD, Kubernetes, SRE."
+        keywords="DevOps, CI/CD, Kubernetes, automation, SRE, infrastructure as code, RYT TechCorp"
+        canonical="https://ryttechcorp.online/solutions/devops"
+        breadcrumbs={[
+          { name: 'Home', url: 'https://ryttechcorp.online' },
+          { name: 'Solutions', url: 'https://ryttechcorp.online/#services' },
+          { name: 'DevOps', url: 'https://ryttechcorp.online/solutions/devops' },
+        ]}
+        serviceType="DevOps Services"
+        serviceName="Enterprise DevOps Engineering"
+      />
       <Navigation />
       <main className="pt-24 pb-16">
         <section className="relative py-20 overflow-hidden">
@@ -196,13 +201,12 @@ const DevOps = () => {
                 <Zap className="w-5 h-5 text-neon" />
                 <span className="text-sm font-semibold text-neon">DevOps</span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                DevOps
-                <span className="gradient-premium bg-clip-text text-transparent"> Engineering</span>
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                DevOps Engineering
               </h1>
-              <p className="text-muted-foreground text-xl mb-8">
+              <h2 className="text-muted-foreground text-xl mb-8 font-normal">
                 Self-healing pipelines, zero-downtime deployments, and enterprise DevOps automation.
-              </p>
+              </h2>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"

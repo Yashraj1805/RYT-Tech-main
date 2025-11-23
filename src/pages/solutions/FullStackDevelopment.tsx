@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Code, Monitor, Server, Database, Zap, Layers, AlertTriangle } from 'lucide-react';
@@ -7,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageBackground from '@/components/PageBackground';
+import SEO from '@/components/SEO';
 import {
   AnimatedMetrics,
   SolutionTimeline,
@@ -21,14 +21,6 @@ import { FlaskConical, CheckCircle2, Building2 } from 'lucide-react';
 
 const FullStackDevelopment = () => {
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    document.title = 'Full-Stack Development | RYT TechCorp';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Modern, fast, and intelligent full-stack engineering for web, mobile, and enterprise systems. React, Next.js, Node.js expertise from RYT TechCorp.');
-    }
-  }, []);
 
   const metrics: Metric[] = [
     { value: 50, suffix: '%', label: 'Faster Delivery', description: 'Accelerated development' },
@@ -190,6 +182,19 @@ const FullStackDevelopment = () => {
 
   return (
     <PageBackground>
+      <SEO
+        title="Full-Stack Development | RYT TechCorp"
+        description="Modern full-stack engineering for web, mobile, and enterprise systems. React, Next.js, Node.js expertise."
+        keywords="full-stack development, React, Next.js, Node.js, web development, mobile apps, RYT TechCorp"
+        canonical="https://ryttechcorp.online/solutions/full-stack-development"
+        breadcrumbs={[
+          { name: 'Home', url: 'https://ryttechcorp.online' },
+          { name: 'Solutions', url: 'https://ryttechcorp.online/#services' },
+          { name: 'Full-Stack Development', url: 'https://ryttechcorp.online/solutions/full-stack-development' },
+        ]}
+        serviceType="Software Development"
+        serviceName="Full-Stack Development Services"
+      />
       <Navigation />
       <main className="pt-24 pb-16">
         <section className="relative py-20 overflow-hidden">
@@ -209,13 +214,12 @@ const FullStackDevelopment = () => {
                 <Code className="w-5 h-5 text-neon" />
                 <span className="text-sm font-semibold text-neon">Development</span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Full-Stack
-                <span className="gradient-premium bg-clip-text text-transparent"> Development</span>
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                Full-Stack Development
               </h1>
-              <p className="text-muted-foreground text-xl mb-8">
+              <h2 className="text-muted-foreground text-xl mb-8 font-normal">
                 Modern, fast, and intelligent full-stack engineering for web, mobile, and enterprise systems.
-              </p>
+              </h2>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"

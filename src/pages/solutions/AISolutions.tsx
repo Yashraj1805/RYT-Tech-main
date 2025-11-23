@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Brain, Network, MessageSquare, BarChart3, Heart, TrendingUp, AlertTriangle } from 'lucide-react';
@@ -7,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageBackground from '@/components/PageBackground';
+import SEO from '@/components/SEO';
 import {
   AnimatedMetrics,
   SolutionTimeline,
@@ -21,14 +21,6 @@ import { FlaskConical, CheckCircle2, Building2 } from 'lucide-react';
 
 const AISolutions = () => {
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    document.title = 'AI Solutions | RYT TechCorp';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Intelligent AI systems designed to automate, optimize, and scale enterprise operations. Machine learning, conversational AI, and predictive analytics from RYT TechCorp.');
-    }
-  }, []);
 
   const metrics: Metric[] = [
     { value: 85, suffix: '%', label: 'Automation Rate', description: 'Process automation' },
@@ -184,6 +176,19 @@ const AISolutions = () => {
 
   return (
     <PageBackground>
+      <SEO
+        title="AI Solutions | RYT TechCorp"
+        description="Intelligent AI systems for enterprise automation, optimization, and scaling. Machine learning, NLP, and predictive analytics."
+        keywords="AI solutions, machine learning, NLP, predictive analytics, automation, AI consulting, RYT TechCorp"
+        canonical="https://ryttechcorp.online/solutions/ai-solutions"
+        breadcrumbs={[
+          { name: 'Home', url: 'https://ryttechcorp.online' },
+          { name: 'Solutions', url: 'https://ryttechcorp.online/#services' },
+          { name: 'AI Solutions', url: 'https://ryttechcorp.online/solutions/ai-solutions' },
+        ]}
+        serviceType="AI Services"
+        serviceName="Enterprise AI Solutions"
+      />
       <Navigation />
       <main className="pt-24 pb-16">
         {/* Hero Section */}
@@ -204,13 +209,12 @@ const AISolutions = () => {
                 <Brain className="w-5 h-5 text-neon" />
                 <span className="text-sm font-semibold text-neon">AI & Automation</span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                AI
-                <span className="gradient-premium bg-clip-text text-transparent"> Solutions</span>
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                AI Solutions
               </h1>
-              <p className="text-muted-foreground text-xl mb-8">
+              <h2 className="text-muted-foreground text-xl mb-8 font-normal">
                 Intelligent systems designed to automate, optimize, and scale enterprise operations.
-              </p>
+              </h2>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"

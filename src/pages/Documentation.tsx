@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageBackground from '@/components/PageBackground';
+import SEO from '@/components/SEO';
 import { useScrollTrigger } from '@/hooks/use-scroll-trigger';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -96,6 +97,16 @@ if (!securityCheck.allowed) {
 
   return (
     <PageBackground>
+      <SEO
+        title="Documentation | RYT TechCorp"
+        description="Comprehensive API documentation, integration guides, and technical resources for RYT TechCorp solutions."
+        keywords="API documentation, integration guides, technical documentation, RYT TechCorp API"
+        canonical="https://ryttechcorp.online/documentation"
+        breadcrumbs={[
+          { name: 'Home', url: 'https://ryttechcorp.online' },
+          { name: 'Documentation', url: 'https://ryttechcorp.online/documentation' },
+        ]}
+      />
       <Navigation />
       <main className="pt-24 pb-16">
         {/* Hero Section */}

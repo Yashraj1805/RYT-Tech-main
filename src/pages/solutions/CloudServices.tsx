@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Cloud, Network, GitBranch, Server, TrendingDown, Shield, AlertTriangle } from 'lucide-react';
@@ -7,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageBackground from '@/components/PageBackground';
+import SEO from '@/components/SEO';
 import {
   AnimatedMetrics,
   SolutionTimeline,
@@ -21,14 +21,6 @@ import { FlaskConical, CheckCircle2, Building2 } from 'lucide-react';
 
 const CloudServices = () => {
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    document.title = 'Cloud Services | RYT TechCorp';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Cloud-native infrastructure built for uptime, scalability, and global performance. AWS, Azure, GCP expertise from RYT TechCorp.');
-    }
-  }, []);
 
   const metrics: Metric[] = [
     { value: 99.99, suffix: '%', label: 'Uptime SLA', description: 'Guaranteed availability' },
@@ -177,6 +169,19 @@ const CloudServices = () => {
 
   return (
     <PageBackground>
+      <SEO
+        title="Cloud Services | RYT TechCorp"
+        description="Cloud-native infrastructure for uptime, scalability, and global performance. AWS, Azure, GCP expertise."
+        keywords="cloud services, cloud migration, AWS, Azure, GCP, cloud infrastructure, cloud-native, RYT TechCorp"
+        canonical="https://ryttechcorp.online/solutions/cloud-services"
+        breadcrumbs={[
+          { name: 'Home', url: 'https://ryttechcorp.online' },
+          { name: 'Solutions', url: 'https://ryttechcorp.online/#services' },
+          { name: 'Cloud Services', url: 'https://ryttechcorp.online/solutions/cloud-services' },
+        ]}
+        serviceType="Cloud Services"
+        serviceName="Cloud Infrastructure Services"
+      />
       <Navigation />
       <main className="pt-24 pb-16">
         <section className="relative py-20 overflow-hidden">
@@ -196,13 +201,12 @@ const CloudServices = () => {
                 <Cloud className="w-5 h-5 text-neon" />
                 <span className="text-sm font-semibold text-neon">Cloud</span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Cloud
-                <span className="gradient-premium bg-clip-text text-transparent"> Services</span>
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                Cloud Services
               </h1>
-              <p className="text-muted-foreground text-xl mb-8">
+              <h2 className="text-muted-foreground text-xl mb-8 font-normal">
                 Cloud-native infrastructure built for uptime, scalability, and global performance.
-              </p>
+              </h2>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"

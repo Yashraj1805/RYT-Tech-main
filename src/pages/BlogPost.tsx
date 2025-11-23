@@ -15,6 +15,7 @@ import {
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageBackground from '@/components/PageBackground';
+import SEO from '@/components/SEO';
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -220,8 +221,41 @@ Cyber resilience is now a leadership discipline. Organizations that operationali
     });
   };
 
+  if (!post) {
+    return (
+      <PageBackground>
+        <SEO
+          title="Blog Post Not Found | RYT TechCorp"
+          description="The requested blog post could not be found."
+          noindex={true}
+        />
+        <Navigation />
+        <div className="pt-24 pb-16 text-center">
+          <h1>Post Not Found</h1>
+          <Button onClick={() => navigate('/')}>Go Home</Button>
+        </div>
+        <Footer />
+      </PageBackground>
+    );
+  }
+
+  const postDescription = post.excerpt || post.content.substring(0, 150) + '...';
+  const optimizedDescription = postDescription.length > 155 ? postDescription.substring(0, 152) + '...' : postDescription;
+
   return (
     <PageBackground>
+      <SEO
+        title={`${post.title} | RYT TechCorp Blog`}
+        description={optimizedDescription}
+        keywords={`${post.category}, ${post.author}, enterprise technology, RYT TechCorp`}
+        ogImage={post.image}
+        canonical={`https://ryttechcorp.online/blog/${slug}`}
+        breadcrumbs={[
+          { name: 'Home', url: 'https://ryttechcorp.online' },
+          { name: 'Blog', url: 'https://ryttechcorp.online/#blog' },
+          { name: post.title, url: `https://ryttechcorp.online/blog/${slug}` },
+        ]}
+      />
       <Navigation />
       
       <article className="pt-24 pb-16">
@@ -230,8 +264,13 @@ Cyber resilience is now a leadership discipline. Organizations that operationali
           <div className="absolute inset-0">
             <img
               src={post.image}
-              alt={post.title}
+              alt={`${post.title} - Featured image for ${post.category} article`}
+              width={1200}
+              height={600}
               className="w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
           </div>

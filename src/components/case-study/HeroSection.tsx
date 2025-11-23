@@ -36,9 +36,9 @@ export const HeroSection = ({ title, subtitle }: HeroSectionProps) => (
     <motion.h1 variants={item} className="text-3xl md:text-5xl font-bold text-foreground">
       {title}
     </motion.h1>
-    <motion.p variants={item} className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+    <motion.h2 variants={item} className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-normal">
       {subtitle}
-    </motion.p>
+    </motion.h2>
   </motion.section>
 );
 

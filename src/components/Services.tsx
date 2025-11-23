@@ -67,7 +67,8 @@ const Services = () => {
             Enterprise-Grade Solutions
           </h2>
           <p className="text-lg text-muted-foreground">
-            Comprehensive security and technology services designed for modern businesses
+            Comprehensive security and technology services designed for modern businesses. 
+            Explore our <Link to="/contact" className="text-neon hover:underline">contact page</Link> to get started.
           </p>
         </div>
 
