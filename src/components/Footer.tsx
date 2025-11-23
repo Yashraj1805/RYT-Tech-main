@@ -54,13 +54,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1 space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 rounded-lg gradient-premium flex items-center justify-center">
-                <span className="text-xl font-bold text-background">R</span>
-              </div>
-              <span className="text-xl font-bold tracking-tight">
-                RYT <span className="text-primary">TechCorp</span>
-              </span>
+            <div className="flex items-center">
+              <img src="/assets/logo/logo.png" alt="RYT TechCorp Logo" className="h-14 md:h-16 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Enterprise security, AI, and software solutions for the modern digital age.

@@ -320,8 +320,7 @@ Cyber resilience is now a leadership discipline. Organizations that operationali
                 <div>
                   <h3 className="text-xl font-bold mb-2">{post.author}</h3>
                   <p className="text-muted-foreground">
-                    Security expert with over 15 years of experience in cybersecurity and enterprise architecture. 
-                    Passionate about building secure, scalable systems that protect digital infrastructure.
+                  Cybersecurity and enterprise systems specialist with a strong focus on threat-resistant architectures, secure design principles, and end-to-end protection of digital platforms.
                   </p>
                 </div>
               </div>

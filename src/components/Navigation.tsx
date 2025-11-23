@@ -39,15 +39,10 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div 
-            className="flex items-center space-x-2 cursor-pointer"
+            className="flex items-center cursor-pointer"
             onClick={() => navigate('/')}
           >
-            <div className="w-10 h-10 rounded-lg gradient-premium flex items-center justify-center">
-              <span className="text-xl font-bold text-background">R</span>
-            </div>
-            <span className="text-xl font-bold tracking-tight">
-              RYT <span className="text-primary">TechCorp</span>
-            </span>
+            <img src="/assets/logo/logo.png" alt="RYT TechCorp Logo" className="h-14 md:h-16 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
